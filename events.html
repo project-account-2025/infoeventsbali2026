@@ -3,24 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description"
         content="Daftar event terbaru di Bali - Konser, festival, pameran seni, dan kegiatan menarik lainnya.">
+    <meta name="keywords" content="event bali, konser bali, festival bali, kegiatan bali, jadwal event bali 2026">
+    <meta name="author" content="Info Events Bali">
+    <meta name="theme-color" content="#1e293b">
+    
     <title>Event Terbaru - Info Events Bali</title>
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
+            <!-- Logo -->
             <a href="index.html" class="logo">
+                <span class="logo-icon">🌴</span>
                 <span class="logo-text">Info Events <span class="logo-highlight">Bali</span></span>
             </a>
 
-            <nav class="nav" id="nav">
+            <!-- Navigation -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="events.html" class="nav-link active">Event Terbaru</a></li>
@@ -28,7 +43,11 @@
                 </ul>
             </nav>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <!-- Hamburger Button -->
+            <button class="nav-toggle" id="navToggle" type="button" 
+                    aria-label="Toggle navigation menu" 
+                    aria-expanded="false" 
+                    aria-controls="nav">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -36,356 +55,372 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="page-badge">📅 Kalender Event</span>
-                <h1 class="page-title">Event Terbaru di Bali</h1>
-                <p class="page-description">
-                    Temukan berbagai event menarik yang akan berlangsung di Bali.
-                    Kami susun berdasarkan bulan agar kamu lebih mudah merencanakan kegiatanmu.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Month Navigation -->
-    <section class="month-navigation">
-        <div class="container">
-            <div class="month-nav-wrapper">
-                <button class="month-nav-btn prev" id="monthPrev" aria-label="Bulan sebelumnya">←</button>
-                <div class="month-tabs" id="monthTabs">
-                    <a href="#januari" class="month-tab active" data-month="januari">Januari</a>
-                    <a href="#februari" class="month-tab" data-month="februari">Februari</a>
-                    <a href="#maret" class="month-tab" data-month="maret">Maret</a>
-                    <a href="#april" class="month-tab" data-month="april">April</a>
-                    <a href="#mei" class="month-tab" data-month="mei">Mei</a>
-                    <a href="#juni" class="month-tab" data-month="juni">Juni</a>
-                    <a href="#juli" class="month-tab" data-month="juli">Juli</a>
-                    <a href="#agustus" class="month-tab" data-month="agustus">Agustus</a>
-                    <a href="#september" class="month-tab" data-month="september">September</a>
-                    <a href="#oktober" class="month-tab" data-month="oktober">Oktober</a>
-                    <a href="#november" class="month-tab" data-month="november">November</a>
-                    <a href="#desember" class="month-tab" data-month="desember">Desember</a>
-                </div>
-                <button class="month-nav-btn next" id="monthNext" aria-label="Bulan selanjutnya">→</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Events List -->
-    <section class="events-list">
-        <div class="container">
-
-            <!-- Januari -->
-            <div class="month-section" id="januari">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Januari 2026
-                    </h2>
-                    <span class="event-count">2 Event</span>
-                </div>
-
-                <div class="events-month-grid">
-                    <!-- Event 1 -->
-                    <article class="event-list-card">
-                        <div class="event-list-date">
-                            <span class="date-day">25</span>
-                            <span class="date-month">Jan</span>
-                        </div>
-                        <div class="event-list-image">
-                            <img src="assets/images/1jan/25jan musik.jpg"
-                                alt="Resphoria Project Vol 3">
-                        </div>
-                        <div class="event-list-content">
-                            <span class="event-list-category">Musik</span>
-                            <h3 class="event-list-title">Resphoria Project Vol 3</h3>
-                            <p class="event-list-location">📍 Mertasari Beach Concert Venue </p>
-                            <p class="event-list-desc">
-                                Rayakan tahun baru dengan pesta pantai spektakuler! DJ internasional,
-                                kembang api, dan suasana yang tak terlupakan.
-                            </p>
-                            <div class="event-list-actions">
-                                <a href="https://linktr.ee/resphoriaproject.vol3?utm_source=linktree_profile_share&ltsid=dd1aa997-c32e-44ab-a847-28d16ea9520f" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-primary btn-sm">
-                                    <span>Info Selengkapnya</span>
-                                    <span class="btn-icon">↗</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Event 2 -->
-                    <article class="event-list-card">
-                        <div class="event-list-date">
-                            <span class="date-day">29</span>
-                            <span class="date-month">Jan</span>
-                        </div>
-                        <div class="event-list-image">
-                            <img src="assets/images/1jan/29jan musik.jpg"
-                                alt="Resphoria Project Vol 3">
-                        </div>
-                        <div class="event-list-content">
-                            <span class="event-list-category">Musik</span>
-                            <h3 class="event-list-title">The Law of the Jungle begins</h3>
-                            <p class="event-list-location">📍 SAVAYA Venue </p>
-                            <p class="event-list-desc">
-                                An Exclusive Night with Peggy Gou at SAVAYA.
-                            </p>
-                            <div class="event-list-actions">
-                                <a href="https://www.savaya.com/event-calendar/january-29-2026" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-primary btn-sm">
-                                    <span>Info Selengkapnya</span>
-                                    <span class="btn-icon">↗</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-<!--------------------------------------------------------------------------------------------------------------------->
-            <!-- Februari -->
-            <div class="month-section" id="februari">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Februari 2026
-                    </h2>
-                    <span class="event-count">2 Event</span>
-                </div>
-
-                <div class="events-month-grid">
-                    <!-- Event 1 -->
-                    <article class="event-list-card">
-                        <div class="event-list-date">
-                            <span class="date-day">01</span>
-                            <span class="date-month">Feb</span>
-                        </div>
-                        <div class="event-list-image">
-                            <img src="assets/images/2feb/01feb musik.jpg"
-                                alt="SECONDHAND SERENADE">
-                        </div>
-                        <div class="event-list-content">
-                            <span class="event-list-category">Musik</span>
-                            <h3 class="event-list-title">SECONDHAND SERENADE</h3>
-                            <p class="event-list-location">📍 International Conference Center Bali</p>
-                            <p class="event-list-desc">
-                                20 YEAR ANNIVERSARY: A Secondhand Symphony
-                            </p>
-                            <div class="event-list-actions">
-                                <a href="https://livetix.id/" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-primary btn-sm">
-                                    <span>Info Selengkapnya</span>
-                                    <span class="btn-icon">↗</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Event 2 -->
-                    <article class="event-list-card">
-                        <div class="event-list-date">
-                            <span class="date-day">15</span>
-                            <span class="date-month">Feb</span>
-                        </div>
-                        <div class="event-list-image">
-                            <img src="assets/images/2feb/15feb run.jpg"
-                                alt="MARITIM HOKIbank RUN 2026">
-                        </div>
-                        <div class="event-list-content">
-                            <span class="event-list-category">Run</span>
-                            <h3 class="event-list-title">MARITIM HOKIbank RUN 2026</h3>
-                            <p class="event-list-location">📍 Kawasan BMTH, Pelabuhan Benoa, Bali</p>
-                            <p class="event-list-desc">
-                                Event lari yang diselenggarakan oleh HOKIbank bersama Pangkalan TNI AL Denpasar
-                                dalam rangka menyambut HUT POMAL (Polisi Militer Angkatan Laut) yang ke-80.
-                            </p>
-                            <div class="event-list-actions">
-                                <a href="https://l.instagram.com/?u=https%3A%2F%2Fhokibankrun.anysport.id%2F%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnvNvK7iXZ6pCQrGLf9qdAqGbj8OQ9kHa5n4EBqhQBPY0jWGeE-HU2pqmlzwo_aem_cESA82qs3l-Fr31kGXcEYg&e=AT1oUlgFQRi4Ur3SOa1jt1FCfckbQZKSHWYs7FOXfBOdBHuiG5vtHRPFm8XxlMNzcOEgoYNVjEP9DBARHMuL47nYXMgbG2XCfAeTXoNwuA" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-primary btn-sm">
-                                    <span>Info Selengkapnya</span>
-                                    <span class="btn-icon">↗</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Maret -->
-            <div class="month-section" id="maret">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Maret 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan Maret akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- April -->
-            <div class="month-section" id="april">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        April 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan April akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- Mei -->
-            <div class="month-section" id="mei">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Mei 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan Mei akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- Juni -->
-            <div class="month-section" id="juni">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Juni 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan September akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- Juli -->
-            <div class="month-section" id="juli">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Juli 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan September akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- Agustus -->
-            <div class="month-section" id="agustus">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Agustus 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan September akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- September -->
-            <div class="month-section" id="september">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        September 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan September akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- Oktober -->
-            <div class="month-section" id="oktober">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Oktober 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan Oktober akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- November -->
-            <div class="month-section" id="november">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        November 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan November akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-
-            <!-- Desember -->
-            <div class="month-section" id="desember">
-                <div class="month-header">
-                    <h2 class="month-title">
-                        <span class="month-icon">📆</span>
-                        Desember 2026
-                    </h2>
-                    <span class="event-count">Coming Soon</span>
-                </div>
-                <div class="coming-soon-message">
-                    <div class="coming-soon-icon">🗓️</div>
-                    <p>Event untuk bulan Desember akan segera diumumkan. Stay tuned!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2>Punya Event yang Ingin Dipromosikan?</h2>
-                    <p>
-                        Kami terbuka untuk kerja sama dengan penyelenggara event, komunitas, dan brand.
-                        Hubungi kami untuk mendapatkan exposure yang lebih luas di Bali.
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="page-badge">📅 Kalender Event</span>
+                    <h1 class="page-title">Event Terbaru di Bali</h1>
+                    <p class="page-description">
+                        Temukan berbagai event menarik yang akan berlangsung di Bali.
+                        Kami susun berdasarkan bulan agar kamu lebih mudah merencanakan kegiatanmu.
                     </p>
                 </div>
-                <div class="cta-actions">
-                    <a href="kontak.html" class="btn btn-primary btn-lg">
-                        <span>Hubungi Admin</span>
-                        <span class="btn-icon">💬</span>
-                    </a>
+            </div>
+        </section>
+
+        <!-- Month Navigation -->
+        <section class="month-navigation">
+            <div class="container">
+                <div class="month-nav-wrapper">
+                    <button class="month-nav-btn prev" id="monthPrev" aria-label="Bulan sebelumnya">←</button>
+                    <div class="month-tabs" id="monthTabs" role="tablist">
+                        <a href="#januari" class="month-tab active" data-month="januari" role="tab" aria-selected="true">Januari</a>
+                        <a href="#februari" class="month-tab" data-month="februari" role="tab" aria-selected="false">Februari</a>
+                        <a href="#maret" class="month-tab" data-month="maret" role="tab" aria-selected="false">Maret</a>
+                        <a href="#april" class="month-tab" data-month="april" role="tab" aria-selected="false">April</a>
+                        <a href="#mei" class="month-tab" data-month="mei" role="tab" aria-selected="false">Mei</a>
+                        <a href="#juni" class="month-tab" data-month="juni" role="tab" aria-selected="false">Juni</a>
+                        <a href="#juli" class="month-tab" data-month="juli" role="tab" aria-selected="false">Juli</a>
+                        <a href="#agustus" class="month-tab" data-month="agustus" role="tab" aria-selected="false">Agustus</a>
+                        <a href="#september" class="month-tab" data-month="september" role="tab" aria-selected="false">September</a>
+                        <a href="#oktober" class="month-tab" data-month="oktober" role="tab" aria-selected="false">Oktober</a>
+                        <a href="#november" class="month-tab" data-month="november" role="tab" aria-selected="false">November</a>
+                        <a href="#desember" class="month-tab" data-month="desember" role="tab" aria-selected="false">Desember</a>
+                    </div>
+                    <button class="month-nav-btn next" id="monthNext" aria-label="Bulan selanjutnya">→</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Events List -->
+        <section class="events-list">
+            <div class="container">
+
+                <!-- Januari -->
+                <div class="month-section" id="januari" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Januari 2026
+                        </h2>
+                        <span class="event-count">2 Event</span>
+                    </div>
+
+                    <div class="events-month-grid">
+                        <!-- Event 1 -->
+                        <article class="event-list-card">
+                            <div class="event-list-date">
+                                <span class="date-day">25</span>
+                                <span class="date-month">Jan</span>
+                            </div>
+                            <div class="event-list-image">
+                                <img src="assets/images/1jan/25jan musik.jpg"
+                                    alt="Resphoria Project Vol 3"
+                                    loading="lazy">
+                            </div>
+                            <div class="event-list-content">
+                                <span class="event-list-category">Musik</span>
+                                <h3 class="event-list-title">Resphoria Project Vol 3</h3>
+                                <p class="event-list-location">📍 Mertasari Beach Concert Venue</p>
+                                <p class="event-list-desc">
+                                    Rayakan tahun baru dengan pesta pantai spektakuler! DJ internasional,
+                                    kembang api, dan suasana yang tak terlupakan.
+                                </p>
+                                <div class="event-list-actions">
+                                    <a href="https://linktr.ee/resphoriaproject.vol3" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="btn btn-primary btn-sm">
+                                        <span>Info Selengkapnya</span>
+                                        <span class="btn-icon">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Event 2 -->
+                        <article class="event-list-card">
+                            <div class="event-list-date">
+                                <span class="date-day">29</span>
+                                <span class="date-month">Jan</span>
+                            </div>
+                            <div class="event-list-image">
+                                <img src="assets/images/1jan/29jan musik.jpg"
+                                    alt="The Law of the Jungle begins"
+                                    loading="lazy">
+                            </div>
+                            <div class="event-list-content">
+                                <span class="event-list-category">Musik</span>
+                                <h3 class="event-list-title">The Law of the Jungle begins</h3>
+                                <p class="event-list-location">📍 SAVAYA Venue</p>
+                                <p class="event-list-desc">
+                                    An Exclusive Night with Peggy Gou at SAVAYA.
+                                </p>
+                                <div class="event-list-actions">
+                                    <a href="https://www.savaya.com/event-calendar/january-29-2026" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="btn btn-primary btn-sm">
+                                        <span>Info Selengkapnya</span>
+                                        <span class="btn-icon">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Februari -->
+                <div class="month-section" id="februari" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Februari 2026
+                        </h2>
+                        <span class="event-count">2 Event</span>
+                    </div>
+
+                    <div class="events-month-grid">
+                        <!-- Event 1 -->
+                        <article class="event-list-card">
+                            <div class="event-list-date">
+                                <span class="date-day">01</span>
+                                <span class="date-month">Feb</span>
+                            </div>
+                            <div class="event-list-image">
+                                <img src="assets/images/2feb/01feb musik.jpg"
+                                    alt="SECONDHAND SERENADE"
+                                    loading="lazy">
+                            </div>
+                            <div class="event-list-content">
+                                <span class="event-list-category">Musik</span>
+                                <h3 class="event-list-title">SECONDHAND SERENADE</h3>
+                                <p class="event-list-location">📍 International Conference Center Bali</p>
+                                <p class="event-list-desc">
+                                    20 YEAR ANNIVERSARY: A Secondhand Symphony
+                                </p>
+                                <div class="event-list-actions">
+                                    <a href="https://livetix.id/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="btn btn-primary btn-sm">
+                                        <span>Info Selengkapnya</span>
+                                        <span class="btn-icon">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Event 2 -->
+                        <article class="event-list-card">
+                            <div class="event-list-date">
+                                <span class="date-day">15</span>
+                                <span class="date-month">Feb</span>
+                            </div>
+                            <div class="event-list-image">
+                                <img src="assets/images/2feb/15feb run.jpg"
+                                    alt="MARITIM HOKIbank RUN 2026"
+                                    loading="lazy">
+                            </div>
+                            <div class="event-list-content">
+                                <span class="event-list-category">Run</span>
+                                <h3 class="event-list-title">MARITIM HOKIbank RUN 2026</h3>
+                                <p class="event-list-location">📍 Kawasan BMTH, Pelabuhan Benoa, Bali</p>
+                                <p class="event-list-desc">
+                                    Event lari yang diselenggarakan oleh HOKIbank bersama Pangkalan TNI AL Denpasar
+                                    dalam rangka menyambut HUT POMAL (Polisi Militer Angkatan Laut) yang ke-80.
+                                </p>
+                                <div class="event-list-actions">
+                                    <a href="https://hokibankrun.anysport.id/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="btn btn-primary btn-sm">
+                                        <span>Info Selengkapnya</span>
+                                        <span class="btn-icon">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Maret -->
+                <div class="month-section" id="maret" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Maret 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Maret akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- April -->
+                <div class="month-section" id="april" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            April 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan April akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- Mei -->
+                <div class="month-section" id="mei" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Mei 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Mei akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                                <!-- Juni -->
+                <div class="month-section" id="juni" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Juni 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Juni akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- Juli -->
+                <div class="month-section" id="juli" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Juli 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Juli akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- Agustus -->
+                <div class="month-section" id="agustus" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Agustus 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Agustus akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- September -->
+                <div class="month-section" id="september" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            September 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan September akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- Oktober -->
+                <div class="month-section" id="oktober" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Oktober 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Oktober akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- November -->
+                <div class="month-section" id="november" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            November 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan November akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+                <!-- Desember -->
+                <div class="month-section" id="desember" role="tabpanel">
+                    <div class="month-header">
+                        <h2 class="month-title">
+                            <span class="month-icon">📆</span>
+                            Desember 2026
+                        </h2>
+                        <span class="event-count">Coming Soon</span>
+                    </div>
+                    <div class="coming-soon-message">
+                        <div class="coming-soon-icon">🗓️</div>
+                        <p>Event untuk bulan Desember akan segera diumumkan. Stay tuned!</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2>Punya Event yang Ingin Dipromosikan?</h2>
+                        <p>
+                            Kami terbuka untuk kerja sama dengan penyelenggara event, komunitas, dan brand.
+                            Hubungi kami untuk mendapatkan exposure yang lebih luas di Bali.
+                        </p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="kontak.html" class="btn btn-primary btn-lg">
+                            <span>Hubungi Admin</span>
+                            <span class="btn-icon">💬</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -393,6 +428,7 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
+                        <span class="logo-icon">🌴</span>
                         <span class="logo-text">Info Events <span class="logo-highlight">Bali</span></span>
                     </a>
                     <p class="footer-tagline">
@@ -400,7 +436,11 @@
                         dari pantai hingga pegunungan — semua ada di sini.
                     </p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/infoeventsbali/" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="https://www.instagram.com/infoeventsbali/" 
+                           class="social-link" 
+                           aria-label="Instagram"
+                           target="_blank"
+                           rel="noopener noreferrer">📷</a>
                         <a href="#" class="social-link" aria-label="Facebook">📘</a>
                         <a href="#" class="social-link" aria-label="Twitter">🐦</a>
                         <a href="#" class="social-link" aria-label="TikTok">🎵</a>
@@ -419,10 +459,10 @@
                     <div class="footer-column">
                         <h4>Kategori Event</h4>
                         <ul>
-                            <li><a href="#januari">Musik & Konser</a></li>
-                            <li><a href="#februari">Seni & Pameran</a></li>
-                            <li><a href="#maret">Budaya & Tradisi</a></li>
-                            <li><a href="#april">Kuliner</a></li>
+                            <li><a href="events.html#musik">Musik & Konser</a></li>
+                            <li><a href="events.html#seni">Seni & Pameran</a></li>
+                            <li><a href="events.html#budaya">Budaya & Tradisi</a></li>
+                            <li><a href="events.html#kuliner">Kuliner</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -447,7 +487,7 @@
 
             <div class="footer-bottom">
                 <p class="copyright">
-                    © 2026 Info Events Bali.
+                    © <span class="current-year">2025</span> Info Events Bali. All rights reserved.
                 </p>
                 <p class="footer-quote">
                     "Karena Bali bukan hanya tentang pantai, tapi juga tentang pengalaman."

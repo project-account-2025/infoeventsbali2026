@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Hubungi Admin Info Events Bali untuk kerja sama event, media partner, dan pertanyaan lainnya.">
+    <meta name="keywords" content="kontak info events bali, hubungi admin, kerja sama event bali, media partner bali">
+    <meta name="author" content="Info Events Bali">
+    <meta name="theme-color" content="#1e293b">
+    
     <title>Kontak Admin - Info Events Bali</title>
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
+            <!-- Logo -->
             <a href="index.html" class="logo">
+                <span class="logo-icon">🌴</span>
                 <span class="logo-text">Info Events <span class="logo-highlight">Bali</span></span>
             </a>
-            
-            <nav class="nav" id="nav">
+
+            <!-- Navigation -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="events.html" class="nav-link">Event Terbaru</a></li>
                     <li><a href="kontak.html" class="nav-link active">Kontak Admin</a></li>
                 </ul>
             </nav>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+
+            <!-- Hamburger Button -->
+            <button class="nav-toggle" id="navToggle" type="button" 
+                    aria-label="Toggle navigation menu" 
+                    aria-expanded="false" 
+                    aria-controls="nav">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -32,277 +53,304 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="page-badge">💬 Hubungi Kami</span>
-                <h1 class="page-title">Kontak Admin</h1>
-                <p class="page-description">
-                    Ada pertanyaan, saran, atau ingin bekerja sama? Kami senang mendengar dari kamu. 
-                    Jangan ragu untuk menghubungi kami melalui channel di bawah ini.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h2>Mari Terhubung</h2>
-                    <p class="contact-intro">
-                        Kami percaya bahwa komunikasi yang baik adalah kunci dari segala kerja sama. 
-                        Tim kami siap membantu kamu dengan respons yang cepat dan ramah.
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="page-badge">💬 Hubungi Kami</span>
+                    <h1 class="page-title">Kontak Admin</h1>
+                    <p class="page-description">
+                        Ada pertanyaan, saran, atau ingin bekerja sama? Kami senang mendengar dari kamu.
+                        Jangan ragu untuk menghubungi kami melalui channel di bawah ini.
                     </p>
+                </div>
+            </div>
+        </section>
 
-                    <div class="contact-cards">
-                        <!-- WhatsApp -->
-                        <a href="https://wa.me/628873434754?text=Halo%20Admin%20Info%20Events%20Bali,%20saya%20ingin%20bertanya%20tentang..." class="contact-card whatsapp">
-                            <div class="contact-card-icon">📱</div>
-                            <div class="contact-card-content">
-                                <h3>WhatsApp</h3>
-                                <p>+62 887 3434 754</p>
-                                <span class="contact-card-note">Respons tercepat, biasanya dalam 1-2 jam</span>
-                            </div>
-                            <span class="contact-card-arrow">→</span>
-                        </a>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h2>Mari Terhubung</h2>
+                        <p class="contact-intro">
+                            Kami percaya bahwa komunikasi yang baik adalah kunci dari segala kerja sama.
+                            Tim kami siap membantu kamu dengan respons yang cepat dan ramah.
+                        </p>
 
-                        <!-- Email -->
-                        <a href="mailto:eventsbaliinfo@gmail.com" class="contact-card email">
-                            <div class="contact-card-icon">📧</div>
-                            <div class="contact-card-content">
-                                <h3>Email</h3>
-                                <p>eventsbaliinfo@gmail.com</p>
-                                <span class="contact-card-note">Untuk proposal dan dokumen resmi</span>
-                            </div>
-                            <span class="contact-card-arrow">→</span>
-                        </a>
+                        <div class="contact-cards">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/628873434754?text=Halo%20Admin%20Info%20Events%20Bali,%20saya%20ingin%20bertanya%20tentang..." 
+                               class="contact-card whatsapp"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="contact-card-icon">📱</div>
+                                <div class="contact-card-content">
+                                    <h3>WhatsApp</h3>
+                                    <p>+62 887 3434 754</p>
+                                    <span class="contact-card-note">Respons tercepat, biasanya dalam 1-2 jam</span>
+                                </div>
+                                <span class="contact-card-arrow">→</span>
+                            </a>
 
-                        <!-- Instagram -->
-                        <a href="https://instagram.com/infoeventsbali" target="_blank" class="contact-card instagram">
-                            <div class="contact-card-icon">📷</div>
-                            <div class="contact-card-content">
-                                <h3>Instagram</h3>
-                                <p>@infoeventsbali</p>
-                                <span class="contact-card-note">Follow untuk update event harian</span>
-                            </div>
-                            <span class="contact-card-arrow">→</span>
-                        </a>
+                            <!-- Email -->
+                            <a href="mailto:eventsbaliinfo@gmail.com" class="contact-card email">
+                                <div class="contact-card-icon">📧</div>
+                                <div class="contact-card-content">
+                                    <h3>Email</h3>
+                                    <p>eventsbaliinfo@gmail.com</p>
+                                    <span class="contact-card-note">Untuk proposal dan dokumen resmi</span>
+                                </div>
+                                <span class="contact-card-arrow">→</span>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/infoeventsbali" 
+                               class="contact-card instagram"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <div class="contact-card-icon">📷</div>
+                                <div class="contact-card-content">
+                                    <h3>Instagram</h3>
+                                    <p>@infoeventsbali</p>
+                                    <span class="contact-card-note">Follow untuk update event harian</span>
+                                </div>
+                                <span class="contact-card-arrow">→</span>
+                            </a>
+                        </div>
+
+                        <!-- Office Hours -->
+                        <div class="office-hours">
+                            <h3>🕐 Jam Operasional (WhatsApp Only)</h3>
+                            <ul>
+                                <li>
+                                    <span class="day">Senin - Jumat</span>
+                                    <span class="time">09:00 - 18:00 WITA</span>
+                                </li>
+                                <li>
+                                    <span class="day">Sabtu</span>
+                                    <span class="time">09:00 - 15:00 WITA</span>
+                                </li>
+                                <li>
+                                    <span class="day">Minggu & Hari Libur</span>
+                                    <span class="time">Tutup</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- Office Hours -->
-                    <div class="office-hours">
-                        <h3>🕐 Jam Operasional ( WhatsApp Only )</h3>
-                        <ul>
-                            <li>
-                                <span class="day">Senin - Jumat</span>
-                                <span class="time">09:00 - 18:00 WITA</span>
-                            </li>
-                            <li>
-                                <span class="day">Sabtu</span>
-                                <span class="time">09:00 - 15:00 WITA</span>
-                            </li>
-                            <li>
-                                <span class="day">Minggu & Hari Libur</span>
-                                <span class="time">Tutup</span>
-                            </li>
-                        </ul>
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <div class="contact-form-header">
+                            <h2>Kirim Pesan</h2>
+                            <p>Isi form di bawah ini dan kami akan segera menghubungi kamu.</p>
+                        </div>
+
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap <span class="required">*</span></label>
+                                <input type="text" 
+                                       id="name" 
+                                       name="name" 
+                                       placeholder="Masukkan nama lengkap" 
+                                       required
+                                       autocomplete="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       placeholder="contoh@email.com" 
+                                       required
+                                       autocomplete="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Nomor WhatsApp</label>
+                                <input type="tel" 
+                                       id="phone" 
+                                       name="phone" 
+                                       placeholder="08xxxxxxxxxx"
+                                       autocomplete="tel">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Keperluan <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Pilih keperluan</option>
+                                    <option value="info-event">Informasi Event</option>
+                                    <option value="promosi-event">Promosi Event Saya</option>
+                                    <option value="media-partner">Media Partner</option>
+                                    <option value="kerja-sama">Kerja Sama Lainnya</option>
+                                    <option value="saran">Saran & Masukan</option>
+                                    <option value="lainnya">Lainnya</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Pesan <span class="required">*</span></label>
+                                <textarea id="message" 
+                                          name="message" 
+                                          rows="5" 
+                                          placeholder="Tulis pesan kamu di sini..." 
+                                          required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                <span>Kirim Pesan</span>
+                                <span class="btn-icon">📨</span>
+                            </button>
+
+                            <p class="form-note">
+                                <span class="required">*</span> Wajib diisi. Kami akan merespons dalam 1x24 jam kerja.
+                            </p>
+                        </form>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <div class="contact-form-header">
-                        <h2>Kirim Pesan</h2>
-                        <p>Isi form di bawah ini dan kami akan segera menghubungi kamu.</p>
-                    </div>
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-badge">FAQ</span>
+                    <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+                    <p class="section-description">
+                        Mungkin pertanyaanmu sudah terjawab di sini. Kalau belum, jangan ragu untuk menghubungi kami.
+                    </p>
+                </div>
 
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Nomor WhatsApp</label>
-                            <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Keperluan <span class="required">*</span></label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Pilih keperluan</option>
-                                <option value="info-event">Informasi Event</option>
-                                <option value="promosi-event">Promosi Event Saya</option>
-                                <option value="media-partner">Media Partner</option>
-                                <option value="kerja-sama">Kerja Sama Lainnya</option>
-                                <option value="saran">Saran & Masukan</option>
-                                <option value="lainnya">Lainnya</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Pesan <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tulis pesan kamu di sini..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg btn-full">
-                            <span>Kirim Pesan</span>
-                            <span class="btn-icon">📨</span>
+                <div class="faq-list">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Bagaimana cara mempromosikan event saya di Info Events Bali?</span>
+                            <span class="faq-icon">+</span>
                         </button>
-
-                        <p class="form-note">
-                            <span class="required">*</span> Wajib diisi. Kami akan merespons dalam 1x24 jam kerja.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-badge">FAQ</span>
-                <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
-                <p class="section-description">
-                    Mungkin pertanyaanmu sudah terjawab di sini. Kalau belum, jangan ragu untuk menghubungi kami.
-                </p>
-            </div>
-
-            <div class="faq-list">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Bagaimana cara mempromosikan event saya di Info Events Bali?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Mudah sekali! Kamu bisa menghubungi kami via WhatsApp atau email dengan menyertakan 
-                            detail event (nama, tanggal, lokasi, deskripsi, dan poster jika ada). Tim kami akan 
-                            meninjau dan menghubungi kamu untuk langkah selanjutnya. Layanan promosi kami tersedia 
-                            dalam paket gratis dan berbayar tergantung kebutuhan exposure.
-                        </p>
+                        <div class="faq-answer">
+                            <p>
+                                Mudah sekali! Kamu bisa menghubungi kami via WhatsApp atau email dengan menyertakan
+                                detail event (nama, tanggal, lokasi, deskripsi, dan poster jika ada). Tim kami akan
+                                meninjau dan menghubungi kamu untuk langkah selanjutnya. Layanan promosi kami tersedia
+                                dalam paket gratis dan berbayar tergantung kebutuhan exposure.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Apakah ada biaya untuk listing event di website ini?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Untuk listing dasar di halaman Event Terbaru, kami menyediakan opsi gratis untuk 
-                            event komunitas dan non-profit. Untuk event komersial atau yang membutuhkan 
-                            highlight khusus (featured event, banner, dll), kami menawarkan paket berbayar 
-                            dengan harga yang sangat terjangkau. Hubungi kami untuk detail lebih lanjut.
-                        </p>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Apakah ada biaya untuk listing event di website ini?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Untuk listing dasar di halaman Event Terbaru, kami menyediakan opsi gratis untuk
+                                event komunitas dan non-profit. Untuk event komersial atau yang membutuhkan
+                                highlight khusus (featured event, banner, dll), kami menawarkan paket berbayar
+                                dengan harga yang sangat terjangkau. Hubungi kami untuk detail lebih lanjut.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Berapa lama waktu yang dibutuhkan untuk event saya tampil di website?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Setelah semua informasi lengkap dan diverifikasi, event kamu akan tampil di website 
-                            dalam waktu 1-3 hari kerja. Untuk event yang urgent (H-7 atau kurang), kami bisa 
-                            mempercepat prosesnya. Pastikan menghubungi kami sesegera mungkin ya!
-                        </p>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Berapa lama waktu yang dibutuhkan untuk event saya tampil di website?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Setelah semua informasi lengkap dan diverifikasi, event kamu akan tampil di website
+                                dalam waktu 1-3 hari kerja. Untuk event yang urgent (H-7 atau kurang), kami bisa
+                                mempercepat prosesnya. Pastikan menghubungi kami sesegera mungkin ya!
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Apakah Info Events Bali menerima kerja sama media partner?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Tentu! Kami sangat terbuka untuk kerja sama media partner. Sebagai media partner, 
-                            kami bisa membantu promosi event kamu melalui website, Instagram, dan channel 
-                            lainnya. Sebagai gantinya, kami biasanya meminta logo placement, tiket untuk 
-                            giveaway, atau bentuk kerja sama lain yang saling menguntungkan.
-                        </p>
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Apakah Info Events Bali menerima kerja sama media partner?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Tentu! Kami sangat terbuka untuk kerja sama media partner. Sebagai media partner,
+                                kami bisa membantu promosi event kamu melalui website, Instagram, dan channel
+                                lainnya. Sebagai gantinya, kami biasanya meminta logo placement, tiket untuk
+                                giveaway, atau bentuk kerja sama lain yang saling menguntungkan.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Bagaimana cara memastikan informasi event di website ini akurat?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Kami selalu memverifikasi setiap event sebelum dipublikasikan. Informasi diambil 
-                            langsung dari penyelenggara resmi atau sumber terpercaya. Jika ada perubahan 
-                            (jadwal, lokasi, dll), penyelenggara bisa menghubungi kami untuk update. 
-                            Kami juga menyarankan pengunjung untuk selalu cek ulang ke penyelenggara 
-                            sebelum datang ke event.
-                        </p>
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Bagaimana cara memastikan informasi event di website ini akurat?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Kami selalu memverifikasi setiap event sebelum dipublikasikan. Informasi diambil
+                                langsung dari penyelenggara resmi atau sumber terpercaya. Jika ada perubahan
+                                (jadwal, lokasi, dll), penyelenggara bisa menghubungi kami untuk update.
+                                Kami juga menyarankan pengunjung untuk selalu cek ulang ke penyelenggara
+                                sebelum datang ke event.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 6 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Saya menemukan informasi yang salah, bagaimana cara melaporkannya?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Terima kasih sudah peduli dengan akurasi informasi! Kamu bisa langsung menghubungi 
-                            kami via WhatsApp atau email dengan menyebutkan event mana yang perlu dikoreksi 
-                            dan informasi yang benar. Kami akan segera memverifikasi dan memperbaikinya. 
-                            Feedback dari kamu sangat membantu kami menjadi lebih baik.
-                        </p>
+                                        <!-- FAQ Item 6 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Saya menemukan informasi yang salah, bagaimana cara melaporkannya?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Terima kasih sudah peduli dengan akurasi informasi! Kamu bisa langsung menghubungi
+                                kami via WhatsApp atau email dengan menyebutkan event mana yang perlu dikoreksi
+                                dan informasi yang benar. Kami akan segera memverifikasi dan memperbaikinya.
+                                Feedback dari kamu sangat membantu kami menjadi lebih baik.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Map Section (Optional) -->
-    <section class="map-section">
-        <div class="container">
-            <div class="map-content">
-                <div class="map-info">
-                    <h2>📍 Berbasis di Bali</h2>
-                    <p>
-                        Meskipun kami bekerja secara remote, hati kami selalu di Bali. 
-                        Kami memahami pulau ini dengan baik karena kami juga bagian dari komunitasnya.
-                    </p>
-                    <div class="map-location">
-                        <strong>Area Operasional:</strong>
-                        <span>Seluruh Bali — dari Lovina hingga Uluwatu, dari Sanur hingga Canggu</span>
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-content">
+                    <div class="map-info">
+                        <h2>📍 Berbasis di Bali</h2>
+                        <p>
+                            Meskipun kami bekerja secara remote, hati kami selalu di Bali.
+                            Kami memahami pulau ini dengan baik karena kami juga bagian dari komunitasnya.
+                        </p>
+                        <div class="map-location">
+                            <strong>Area Operasional:</strong>
+                            <span>Seluruh Bali — dari Lovina hingga Uluwatu, dari Sanur hingga Canggu</span>
+                        </div>
                     </div>
-                </div>
-                <div class="map-illustration">
-                    <div class="bali-map-placeholder">
-                        <span class="map-emoji">🗺️</span>
-                        <span class="map-text">Bali, Indonesia</span>
+                    <div class="map-illustration">
+                        <div class="bali-map-placeholder">
+                            <span class="map-emoji">🗺️</span>
+                            <span class="map-text">Bali, Indonesia</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -310,20 +358,25 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
+                        <span class="logo-icon">🌴</span>
                         <span class="logo-text">Info Events <span class="logo-highlight">Bali</span></span>
                     </a>
                     <p class="footer-tagline">
-                        Menghubungkan kamu dengan event terbaik di Bali. Dari musik hingga budaya, 
+                        Menghubungkan kamu dengan event terbaik di Bali. Dari musik hingga budaya,
                         dari pantai hingga pegunungan — semua ada di sini.
                     </p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/infoeventsbali/" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="https://www.instagram.com/infoeventsbali/" 
+                           class="social-link" 
+                           aria-label="Instagram"
+                           target="_blank"
+                           rel="noopener noreferrer">📷</a>
                         <a href="#" class="social-link" aria-label="Facebook">📘</a>
                         <a href="#" class="social-link" aria-label="Twitter">🐦</a>
                         <a href="#" class="social-link" aria-label="TikTok">🎵</a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Navigasi</h4>
@@ -361,10 +414,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p class="copyright">
-                    © 2026 Info Events Bali.
+                    © <span class="current-year">2025</span> Info Events Bali. All rights reserved.
                 </p>
                 <p class="footer-quote">
                     "Karena Bali bukan hanya tentang pantai, tapi juga tentang pengalaman."
@@ -378,7 +431,11 @@
         <span>↑</span>
     </button>
 
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
+
 </html>
