@@ -109,86 +109,68 @@ const MobileNav = {
             return;
         }
 
-        // Create overlay if not exists
         this.createOverlay();
 
-        // Hamburger click event
+        // Hamburger click
         navToggle.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            console.log('🍔 Hamburger clicked!');
             this.toggle();
         });
-
-        // Touch event for mobile
-        navToggle.addEventListener('touchstart', (e) => {
-            e.stopPropagation();
-        }, { passive: true });
 
         // Overlay click to close
         const overlay = document.getElementById('navOverlay');
         if (overlay) {
-            overlay.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (this.isOpen) {
-                    this.close();
-                }
+            overlay.addEventListener('click', () => {
+                if (this.isOpen) this.close();
             });
         }
 
-        // Close when clicking nav links
-        nav.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+        // Nav links - PERBAIKAN UTAMA
+        nav.querySelectorAll('.nav-link').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                // JANGAN preventDefault() agar link bekerja!
+                console.log('📍 Link clicked:', link.textContent.trim());
+                
                 if (this.isOpen) {
-                    setTimeout(() => this.close(), 150);
+                    // Delay close sedikit agar navigasi terjadi
+                    setTimeout(() => this.close(), 100);
                 }
             });
         });
 
-        // ESC key to close
+        // ESC to close
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.isOpen) {
-                this.close();
-            }
+            if (e.key === 'Escape' && this.isOpen) this.close();
         });
 
-        // Close on window resize to desktop
-        window.addEventListener('resize', Utils.debounce(() => {
+        // Resize handler
+        window.addEventListener('resize', () => {
             if (window.innerWidth > 768 && this.isOpen) {
                 this.close();
             }
-        }, 200));
+        });
 
         console.log('✅ Mobile nav initialized');
     },
 
     createOverlay() {
-        let overlay = document.getElementById('navOverlay');
-        if (!overlay) {
-            overlay = document.createElement('div');
+        if (!document.getElementById('navOverlay')) {
+            const overlay = document.createElement('div');
             overlay.className = 'nav-overlay';
             overlay.id = 'navOverlay';
             document.body.appendChild(overlay);
-            console.log('✅ Overlay created');
         }
     },
 
     toggle() {
-        if (this.isAnimating) {
-            console.log('⏳ Animation in progress...');
-            return;
-        }
-        
-        if (this.isOpen) {
-            this.close();
-        } else {
-            this.open();
-        }
+        if (this.isAnimating) return;
+        this.isOpen ? this.close() : this.open();
     },
 
     open() {
         if (this.isOpen || this.isAnimating) return;
-
+        
         this.isAnimating = true;
         this.isOpen = true;
 
@@ -196,19 +178,15 @@ const MobileNav = {
         const navToggle = document.getElementById('navToggle');
         const overlay = document.getElementById('navOverlay');
 
-        // Add active classes
-        if (nav) nav.classList.add('active');
-        if (navToggle) {
-            navToggle.classList.add('active');
-            navToggle.setAttribute('aria-expanded', 'true');
-        }
-        if (overlay) overlay.classList.add('active');
+        nav?.classList.add('active');
+        navToggle?.classList.add('active');
+        navToggle?.setAttribute('aria-expanded', 'true');
+        overlay?.classList.add('active');
         
-        // Lock body scroll
+        // Lock scroll - TANPA position: fixed pada body
+        document.documentElement.classList.add('nav-open');
         document.body.classList.add('nav-open');
-        document.body.style.overflow = 'hidden';
 
-        // Reset animation flag
         setTimeout(() => {
             this.isAnimating = false;
         }, 300);
@@ -218,7 +196,7 @@ const MobileNav = {
 
     close() {
         if (!this.isOpen || this.isAnimating) return;
-
+        
         this.isAnimating = true;
         this.isOpen = false;
 
@@ -226,19 +204,15 @@ const MobileNav = {
         const navToggle = document.getElementById('navToggle');
         const overlay = document.getElementById('navOverlay');
 
-        // Remove active classes
-        if (nav) nav.classList.remove('active');
-        if (navToggle) {
-            navToggle.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-        }
-        if (overlay) overlay.classList.remove('active');
+        nav?.classList.remove('active');
+        navToggle?.classList.remove('active');
+        navToggle?.setAttribute('aria-expanded', 'false');
+        overlay?.classList.remove('active');
         
-        // Unlock body scroll
+        // Unlock scroll
+        document.documentElement.classList.remove('nav-open');
         document.body.classList.remove('nav-open');
-        document.body.style.overflow = '';
 
-        // Reset animation flag
         setTimeout(() => {
             this.isAnimating = false;
         }, 300);
@@ -246,6 +220,11 @@ const MobileNav = {
         console.log('📁 Menu CLOSED');
     }
 };
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    MobileNav.init();
+});
 
 // ==========================================
 // 5. HEADER SCROLL EFFECT
