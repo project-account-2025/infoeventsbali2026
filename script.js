@@ -637,7 +637,7 @@ const ContactForm = {
         // Open WhatsApp after delay
         setTimeout(() => {
             window.open(waUrl, '_blank');
-        }, 1500);
+        }, 1000);
 
         // Reset form
         form.reset();
