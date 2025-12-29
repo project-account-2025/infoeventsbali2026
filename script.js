@@ -7,7 +7,7 @@
 // 1. CONFIGURATION
 // ==========================================
 const CONFIG = {
-    whatsappNumber: '628873434754',
+    whatsappNumber: '+628873434754',
     toastDuration: 5000,
     scrollOffset: 20
 };
@@ -629,7 +629,7 @@ const ContactForm = {
 
         // Create WhatsApp message
         const waMessage = this.createWhatsAppMessage(data);
-        const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
+        const waUrl = `https://wa.me/+628873434754?text=${encodeURIComponent(waMessage)}`;
 
         // Show success toast
         Toast.success('Pesan Siap Dikirim!', 'Anda akan diarahkan ke WhatsApp...');

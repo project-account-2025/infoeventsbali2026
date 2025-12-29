@@ -719,7 +719,6 @@ strong {
     transform: translateY(6px);
 }
 
-/* Hamburger Active State (X) */
 .nav-toggle.active span:nth-child(1) {
     transform: translateY(-50%) rotate(45deg);
 }
@@ -733,7 +732,6 @@ strong {
     transform: translateY(-50%) rotate(-45deg);
 }
 
-/* Navigation Overlay */
 .nav-overlay {
     display: none;
     position: fixed;
