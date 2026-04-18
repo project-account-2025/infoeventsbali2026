@@ -53,6 +53,7 @@
     --accent-blue-light: #60a5fa;
     --accent-cyan: #06b6d4;
     --accent-teal: #14b8a6;
+    --accent-logo: #9352e4;
 
     /* Neutral Colors */
     --white: #ffffff;
@@ -607,7 +608,7 @@ strong {
 }
 
 .logo-highlight {
-    color: var(--accent-blue);
+    color: var(--accent-logo);
 }
 
 /* Desktop Navigation */
@@ -990,7 +991,7 @@ strong {
 }
 
 .hero-title .highlight {
-    color: var(--accent-cyan);
+    color: var(--accent-logo);
 }
 
 .hero-description {
@@ -4236,6 +4237,134 @@ html.nav-open {
     }
 }
 
+/* ==========================================
+   PAST EVENT STYLES
+   ========================================== */
+
+/* Past Event Card */
+.event-list-card.past-event {
+    opacity: 0.5;
+    filter: grayscale(60%);
+    pointer-events: none;
+    position: relative;
+    cursor: not-allowed;
+}
+
+.event-list-card.past-event::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-xl);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Past Event Badge */
+.past-event-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--white);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    backdrop-filter: blur(4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Past Event Image Overlay */
+.event-list-card.past-event .event-list-image {
+    position: relative;
+}
+
+.event-list-card.past-event .event-list-image::after {
+    content: '⏰ Event Sudah Lewat';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(2px);
+}
+
+/* Past Event Date Styling */
+.event-list-card.past-event .event-list-date {
+    background: linear-gradient(135deg, var(--gray-500), var(--gray-600));
+}
+
+/* Past Event Button - disabled look */
+.event-list-card.past-event .btn {
+    background: var(--gray-300) !important;
+    color: var(--gray-500) !important;
+    border-color: var(--gray-300) !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+}
+
+/* Past Event Title Strikethrough */
+.event-list-card.past-event .event-list-title {
+    color: var(--gray-500);
+}
+
+/* Past Event Category Badge */
+.event-list-card.past-event .event-list-category {
+    background: var(--gray-200);
+    color: var(--gray-500);
+}
+
+/* Past Event hover - no effect */
+.event-list-card.past-event:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-sm) !important;
+    border-color: var(--gray-200) !important;
+}
+
+/* Past Event Label in content */
+.past-event-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    padding: var(--spacing-1) var(--spacing-3);
+    background: var(--gray-200);
+    color: var(--gray-500);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-2);
+}
+
+/* Month section - all past */
+.month-section.all-past .month-header {
+    opacity: 0.6;
+}
+
+.month-section.all-past .event-count {
+    background: var(--gray-400);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .event-list-card.past-event .event-list-image::after {
+        font-size: var(--text-xs);
+    }
+}
 
 /* ==========================================
    END OF STYLESHEET

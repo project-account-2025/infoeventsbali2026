@@ -1169,6 +1169,7 @@ const App = {
             ScrollAnimations.init();
             ScrollProgress.init();
             LazyLoading.init();
+            PastEvents.init();
             FloatingCards.init();
             CounterAnimation.init();
 
@@ -1258,6 +1259,186 @@ window.InfoEventsBali = {
     
     // Utility functions
     utils: Utils
+};
+
+// ==========================================
+// PAST EVENTS HANDLER
+// ==========================================
+const PastEvents = {
+    
+    // Parse tanggal dari card
+    // Format: "18" Jan, "07 - 08" Feb, "COMING SOON" Apr
+    parseEventDate(card) {
+        const dayEl = card.querySelector('.event-list-date .date-day');
+        const monthEl = card.querySelector('.event-list-date .date-month');
+        
+        if (!dayEl || !monthEl) return null;
+        
+        const dayText = dayEl.textContent.trim();
+        const monthText = monthEl.textContent.trim().toLowerCase();
+        
+        // Skip "COMING SOON"
+        if (dayText.toUpperCase().includes('COMING') || 
+            dayText.toUpperCase().includes('SOON') ||
+            dayText.toUpperCase().includes('TBA')) {
+            return null;
+        }
+        
+        // Map bulan Indonesia ke angka
+        const monthMap = {
+            'jan': 0, 'feb': 1, 'mar': 2, 'apr': 3,
+            'mei': 4, 'may': 4, 'jun': 5, 'jul': 6,
+            'agu': 7, 'aug': 7, 'sep': 8, 'okt': 9,
+            'oct': 9, 'nov': 10, 'des': 11, 'dec': 11
+        };
+        
+        // Cari bulan yang cocok
+        let monthNum = null;
+        for (const [key, val] of Object.entries(monthMap)) {
+            if (monthText.startsWith(key)) {
+                monthNum = val;
+                break;
+            }
+        }
+        
+        if (monthNum === null) return null;
+        
+        // Ambil hari terakhir jika range (misal "07 - 08" → ambil 08)
+        // Juga handle "25-26" → ambil 26
+        let dayNum;
+        const rangeMatch = dayText.match(/(\d+)\s*[-–]\s*(\d+)/);
+        if (rangeMatch) {
+            // Ambil hari terakhir dari range
+            dayNum = parseInt(rangeMatch[2], 10);
+        } else {
+            const singleMatch = dayText.match(/(\d+)/);
+            if (!singleMatch) return null;
+            dayNum = parseInt(singleMatch[1], 10);
+        }
+        
+        if (isNaN(dayNum) || isNaN(monthNum)) return null;
+        
+        // Tentukan tahun
+        // Ambil dari month-section parent
+        const monthSection = card.closest('.month-section');
+        let year = new Date().getFullYear();
+        
+        if (monthSection) {
+            const titleEl = monthSection.querySelector('.month-title');
+            if (titleEl) {
+                const yearMatch = titleEl.textContent.match(/(\d{4})/);
+                if (yearMatch) {
+                    year = parseInt(yearMatch[1], 10);
+                }
+            }
+        }
+        
+        // Buat tanggal akhir event (akhir hari = 23:59:59)
+        const eventDate = new Date(year, monthNum, dayNum, 23, 59, 59);
+        return eventDate;
+    },
+
+    // Cek apakah event sudah lewat
+    isPast(eventDate) {
+        if (!eventDate) return false;
+        return eventDate < new Date();
+    },
+
+    // Tandai card sebagai past event
+    markAsPast(card) {
+        card.classList.add('past-event');
+        
+        // Tambahkan label "Event Sudah Lewat" di content
+        const content = card.querySelector('.event-list-content');
+        if (content) {
+            // Hapus label lama jika ada
+            const existingLabel = content.querySelector('.past-event-label');
+            if (!existingLabel) {
+                const label = document.createElement('span');
+                label.className = 'past-event-label';
+                label.innerHTML = '⏰ Event Sudah Lewat';
+                
+                // Insert sebelum category badge
+                const categoryEl = content.querySelector('.event-list-category');
+                if (categoryEl) {
+                    content.insertBefore(label, categoryEl);
+                } else {
+                    content.insertBefore(label, content.firstChild);
+                }
+            }
+        }
+        
+        // Disable semua link/button di dalam card
+        card.querySelectorAll('a, button').forEach(el => {
+            el.setAttribute('tabindex', '-1');
+            el.setAttribute('aria-disabled', 'true');
+            if (el.tagName === 'A') {
+                el.removeAttribute('href');
+            }
+        });
+        
+        // Tambahkan aria-label
+        card.setAttribute('aria-label', 
+            (card.querySelector('.event-list-title')?.textContent || 'Event') + 
+            ' - Event sudah lewat'
+        );
+    },
+
+    // Cek apakah semua event dalam bulan sudah lewat
+    checkMonthAllPast(monthSection) {
+        const cards = monthSection.querySelectorAll('.event-list-card');
+        if (!cards.length) return;
+        
+        const allPast = Array.from(cards).every(card => 
+            card.classList.contains('past-event')
+        );
+        
+        if (allPast) {
+            monthSection.classList.add('all-past');
+            
+            // Update event count badge
+            const countEl = monthSection.querySelector('.event-count');
+            if (countEl && !countEl.textContent.includes('Sudah Lewat')) {
+                const count = cards.length;
+                countEl.textContent = `${count} Event (Sudah Lewat)`;
+                countEl.style.background = 'var(--gray-400)';
+            }
+        }
+    },
+
+    // Main init
+    init() {
+        const cards = document.querySelectorAll('.event-list-card');
+        if (!cards.length) {
+            console.log('ℹ️ No event cards found');
+            return;
+        }
+
+        let pastCount = 0;
+        const now = new Date();
+        
+        console.log(`📅 Checking ${cards.length} events against: ${now.toLocaleDateString('id-ID')}`);
+
+        cards.forEach(card => {
+            const eventDate = this.parseEventDate(card);
+            
+            if (eventDate) {
+                console.log(`   Event: ${card.querySelector('.event-list-title')?.textContent?.trim()} | Date: ${eventDate.toLocaleDateString('id-ID')} | Past: ${this.isPast(eventDate)}`);
+                
+                if (this.isPast(eventDate)) {
+                    this.markAsPast(card);
+                    pastCount++;
+                }
+            }
+        });
+
+        // Check each month section
+        document.querySelectorAll('.month-section').forEach(section => {
+            this.checkMonthAllPast(section);
+        });
+
+        console.log(`✅ Past events marked: ${pastCount}/${cards.length}`);
+    }
 };
 
 // ==========================================
